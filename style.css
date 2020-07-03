@@ -1,0 +1,218 @@
+/*BASE*/
+
+
+*,
+*::after,
+*::before	{
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html	{
+	font-size: 62.5%;
+	height: 100%;	
+}
+
+@media only screen and (max-width: 56.25em) {
+	html {
+	  font-size: 50%;
+	}
+  }
+
+
+body	{
+	
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.8rem;
+	color: #fff;
+
+}
+/* Heading Section */
+
+.header {
+	height: 95vh;
+	background-image: url(img/banner2.jpg);
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	
+	
+	
+}
+
+.header__logo-box	{
+	position: absolute;
+	top: 3rem;
+	left: 0;
+}
+
+.header__logo	{
+	height: 10rem;
+}
+
+.header__text-box	{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	font-weight: 100;
+}
+
+
+/* grid layout */
+
+.container	{
+	margin: 5rem 0;
+	display: grid;
+    grid-template-columns: [center-start] repeat(8, [col-start] 
+	minmax(min-content, 1fr) [col-end]) [center-end];
+	grid-template-rows: min-content 100%; 
+	row-gap: 3rem;
+	
+		
+}
+
+.tours {
+	grid-column: col-start 2/col-end 7;
+	
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+	grid-auto-rows: min-content;
+	gap: 7rem;
+	
+}
+
+.tours__header {
+	grid-column: 1/-1;
+	text-align: center;
+	color: rgba(108, 122, 137, 1);
+	font-size: 3.5;
+	letter-spacing: .5rem;
+	text-transform: uppercase;
+}
+
+/* Quote Section */
+.quote {
+	grid-column: col-start 3/col-end 6;
+	grid-row: 1/2;
+	margin: 4rem 0;
+	text-align: center;
+	color: rgba(108, 122, 137, 1);
+	position: relative;
+	padding: 3rem 0;
+	z-index: 1;
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+}
+
+@media only screen and (max-width: 56.25em) {
+	.quote {
+	 grid-column: col-start 2/col-end 7;
+	}
+  }
+
+.quote__text {
+	padding: 2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+	.quote__text {
+	  font-size: 1.7rem;
+	}
+  }
+
+
+
+
+/* Tours Section */
+
+.tours__content {
+	text-align: center;
+	background-color: rgba(108, 122, 137, 1);
+	position: relative;
+	color: #fff;
+	box-shadow: 0 3rem 6rem rgba(0, 0, 0, .3); 
+}
+
+.tours__img {
+	width: 100%;
+}
+
+.tours__title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 20%);
+	opacity: 0;
+	transition: all .5s;
+	font-weight: 400;
+	font-size: 3rem;
+	color: #fff
+	
+}
+
+.tours__text {
+	padding: 2rem;
+	font-weight: 300;
+}
+
+
+/* Footer Footage */
+
+.footer {
+	background-color: black;
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	padding: 2rem;
+}
+
+.footer__logo-box{
+	align-self: center;
+	padding-top: 5rem;
+}
+
+.footer__navigation {
+	display: flex;
+	width: 100%;
+	padding: 5rem;
+	color: #fff;
+}
+
+.footer__list {
+	flex: 0 0 50%;
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+	justify-content: space-evenly;
+}
+
+.footer__link:link, 
+.footer__link:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.footer__copyright {
+	flex: 1;
+	text-align: center;
+}
+/* Hover effects */
+
+.tours__content:hover .tours__title{
+	transform: translate(-50%, -50%);
+	opacity: 1;
+}
+.tours__content:hover .tours__img {
+	filter: blur(3px);
+}
+
+/* Typography */
+
+.heading-primary {
+	font-weight: 300;
+	font-size: 6rem;
+	
+}
